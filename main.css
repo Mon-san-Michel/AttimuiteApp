@@ -2,6 +2,10 @@
     text-decoration: underline;
 }
 
+#TurnMessage {
+    font-size: 2em;
+}
+
 .symbol {
     font-size: 3em;
 }
