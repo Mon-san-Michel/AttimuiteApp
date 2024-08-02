@@ -5,7 +5,7 @@ function janken(choice) {
     PlayersChoiceElement.innerHTML = Num2Synbol(choice);
 
     let PCsChoiceElemennt = document.getElementById("PCsChoice");
-    let PCsChoiceNumber = Math.floor(Math.random() * 3) + 1;
+    let PCsChoiceNumber = Math.floor(Math.random() * 4) + 1;
 
     PCsChoiceElemennt.innerHTML = Num2Synbol(PCsChoiceNumber);
 
@@ -18,15 +18,19 @@ function Num2Synbol(choice)
 
     switch (choice) {
         case 1:
-            symbol = "✊🏻";
+            symbol = "←";
             break;
 
         case 2:
-            symbol = "✌🏻";
+            symbol = "↑";
+            break;
+        
+        case 3:
+            symbol = "→";
             break;
 
         default:
-            symbol = "🖐🏻";
+            symbol = "↓";
             break;
     }
 
@@ -38,8 +42,8 @@ function Judgement(PlayersChoice, PCsChoice)
     let resultMsg = "";
     let constPlayerWin = "プレイヤーの勝ち";
     let constPCWin = "コンピューターの勝ち";
-    let constDraw = "あいこ";
-
+    //let constDraw = "あいこ";
+    /*
     if (PlayersChoice == PCsChoice) {
         resultMsg = constDraw;
     }else{
@@ -65,7 +69,12 @@ function Judgement(PlayersChoice, PCsChoice)
             }
         }
     }
-
+    */
+    if (PlayersChoice == PCsChoice) { 
+        resultMsg = constPlayerWin;
+    }else{
+        resultMsg = constPCWin;
+    }
     return resultMsg;
 
 }
